@@ -2,10 +2,10 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from '@angular/router';
 
 // ACCOUNT
-// import { AccountComponent } from './account/shared/account.component';
-// import { AccountShowComponent } from './account/account-show/account-show.component';
-// import { AccountNewComponent } from './account/account-new/account-new.component';
-// import { AccountListComponent } from './account/account-list/account-list.component';
+import { AccountComponent } from './account/account.component';
+import { AccountShowComponent } from './account/account-show/account-show.component';
+import { AccountNewComponent } from './account/account-new/account-new.component';
+import { AccountListComponent } from './account/account-list/account-list.component';
 // import { AccountMenuComponent } from './account/shared/account-menu.component';
 
 // CATEGORY 
@@ -23,14 +23,14 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: 'category' },
-    // {
-    //     path: 'account', component: AccountComponent,
-    //     children: [
-    //         { path: '', component: AccountListComponent },
-    //         { path: 'new', component: AccountNewComponent },
-    //         { path: ':id', component: AccountShowComponent }
-    //     ]
-    // },
+    {
+        path: 'account', component: AccountComponent,
+        children: [
+            { path: '', component: AccountListComponent },
+            { path: 'new', component: AccountNewComponent },
+            { path: ':id', component: AccountShowComponent }
+        ]
+    },
     // {
     //     path: 'category', component: CategoryComponent,
     //     children: [

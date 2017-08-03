@@ -15,13 +15,13 @@ import { SuccessComponent } from './shared/success.component';
 // ACCOUNT
 import { AccountComponent } from './account/account.component';
 import { AccountMenuComponent } from './account/account-menu/account-menu.component';
-
-// import { AccountShowComponent } from './account/account-show/account-show.component';
-// import { AccountNewComponent } from './account/account-new/account-new.component';
+import { AccountListComponent } from './account/account-list/account-list.component';
+import { AccountShowComponent } from './account/account-show/account-show.component';
+import { AccountNewComponent } from './account/account-new/account-new.component';
 // import { AccountListComponent } from './account/account-list/account-list.component';
 
 // SERVICES
-// import { AccountService } from './account/service/account.service';
+import { AccountService } from './account/account.service';
 // import { CategoryService } from './category/services/category.service';
 // import { CategoryTypeService } from './category/services/category-type.service';
 
@@ -43,7 +43,10 @@ import { AccountMenuComponent } from './account/account-menu/account-menu.compon
     ErrorComponent,
     SuccessComponent,
     AccountComponent,
-    AccountMenuComponent
+    AccountMenuComponent,
+    AccountListComponent,
+    AccountShowComponent,
+    AccountNewComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,7 @@ import { AccountMenuComponent } from './account/account-menu/account-menu.compon
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AccountService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
