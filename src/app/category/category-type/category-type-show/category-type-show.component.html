@@ -1,0 +1,29 @@
+<h3 class="text-center">Type Category</h3>
+
+<form #typeForm="ngForm" (ngSubmit)="onSubmit()" class="form-horizontal" novalidate>
+    <div class="form-group">
+        <label class="control-label col-md-2" for="name">Name:</label>
+        <div class="col-md-10">
+            <input type="text" class="form-control" id="name" placeholder="Name" [(ngModel)]="typeCategory.name" name="name" required #nameControl="ngModel">
+            <div class="alert alert-danger" [hidden]="nameControl.valid || nameControl.pristine">Name is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-2" for="name">Type:</label>
+        <div class="col-md-10">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" id="active" 
+                    [(ngModel)]="typeCategory.isIncome" name="isIncome"> 
+                      <div *ngIf="typeCategory.isIncome;else expense">Income</div>
+                    <ng-template #expense>Expense</ng-template>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-warning btn-lg" (click)="onReturn()">Back</button>
+        <button type="submit" class="btn btn-success btn-lg" [disabled]="!typeForm.form.valid">Save</button>
+        <button type="button" class="btn btn-danger btn-lg" (click)="onDelete()">Delete</button>
+    </div>
+</form>

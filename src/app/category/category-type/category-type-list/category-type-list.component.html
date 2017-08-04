@@ -1,0 +1,13 @@
+<h2 class="text-center">
+    List of Type Of Categories
+</h2>
+
+<div class="list-group">
+    <button class="list-group-item" *ngFor="let type of typeCategories" (click)="goTo(type)">
+    {{ type.name }}
+    <span class="badge">
+        <div *ngIf="type.isIncome;else expense">+</div>
+        <ng-template #expense>-</ng-template>
+    </span>
+  </button>
+</div>

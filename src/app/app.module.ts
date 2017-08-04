@@ -18,23 +18,22 @@ import { AccountMenuComponent } from './account/account-menu/account-menu.compon
 import { AccountListComponent } from './account/account-list/account-list.component';
 import { AccountShowComponent } from './account/account-show/account-show.component';
 import { AccountNewComponent } from './account/account-new/account-new.component';
-// import { AccountListComponent } from './account/account-list/account-list.component';
 
 // SERVICES
 import { AccountService } from './account/account.service';
-// import { CategoryService } from './category/services/category.service';
-// import { CategoryTypeService } from './category/services/category-type.service';
+import { CategoryTypeService } from './category/category-type.service';
+import { CategoryService } from './category/category.service';
 
 // CATEGORY
-// import { CategoryComponent } from './category/category/category.component';
-// import { CategoryListComponent } from './category/category-list/category-list.component';
-// import { CategoryNewComponent } from './category/category-new/category-new.component';
-// import { CategoryShowComponent } from './category/category-show/category-show.component';
-// import { CategoryTypeComponent } from './category/category-type/category-type/category-type.component';
-// import { CategoryTypeListComponent } from './category/category-type/category-type-list/category-type-list.component';
-// import { CategoryTypeShowComponent } from './category/category-type/category-type-show/category-type-show.component';
-// import { CategoryTypeNewComponent } from './category/category-type/category-type-new/category-type-new.component';
-// import { CategoryMenuComponent } from './category/shared/category-menu.component';
+import { CategoryComponent } from './category/category.component';
+import { CategoryMenuComponent } from './category/category-menu/category-menu.component';
+import { CategoryListComponent } from './category/category-list/category-list.component';
+import { CategoryNewComponent } from  './category/category-new/category-new.component';
+import { CategoryShowComponent } from './category/category-show/category-show.component';
+import { CategoryTypeComponent } from './category/category-type/category-type.component';
+import { CategoryTypeListComponent } from './/category/category-type/category-type-list/category-type-list.component';
+import { CategoryTypeShowComponent } from './category/category-type/category-type-show/category-type-show.component';
+import { CategoryTypeNewComponent } from './category/category-type/category-type-new/category-type-new.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +45,16 @@ import { AccountService } from './account/account.service';
     AccountMenuComponent,
     AccountListComponent,
     AccountShowComponent,
-    AccountNewComponent
+    AccountNewComponent,
+    CategoryComponent,
+    CategoryMenuComponent,
+    CategoryListComponent,
+    CategoryNewComponent,
+    CategoryShowComponent,
+    CategoryTypeComponent,
+    CategoryTypeListComponent,
+    CategoryTypeShowComponent,
+    CategoryTypeNewComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +63,7 @@ import { AccountService } from './account/account.service';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [AccountService],
+  providers: [AccountService, CategoryService, CategoryTypeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
