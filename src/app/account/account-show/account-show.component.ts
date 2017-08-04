@@ -27,6 +27,7 @@ export class AccountShowComponent implements OnInit {
     ngOnInit() {
         this.account = new Account('', true);
         this.getAccount();
+        this.accountService.successMessage = null;
     }
 
     getAccount(): void {
@@ -58,7 +59,7 @@ export class AccountShowComponent implements OnInit {
         this.accountService
             .updateAccount(this.account)
             .subscribe(
-                response => this.router.navigate(['account'])
+            response => this.router.navigate(['account'])
             );
     }
 }

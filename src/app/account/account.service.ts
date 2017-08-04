@@ -25,26 +25,39 @@ export class AccountService {
 
     }
 
-    deleteAccount(account: Account){
+    deleteAccount(account: Account) {
         return this.http.delete(this.url + "/" + account.id)
             .map((response: Response) => {
                 response.json(),
-                this.successMessage = "Account deleted with success!"
+                    this.successMessage = "Account deleted with success!"
             })
             .catch(this.handleError)
     }
 
-    updateAccount(account: Account){
+    updateAccount(account: Account) {
         const body = JSON.stringify(account);
         const headers = new Headers({
             'Content-Type': 'application/json'
         })
 
-        return this.http.patch(this.url + "/" + account.id, body, { headers: headers})
+        return this.http.patch(this.url + "/" + account.id, body, { headers: headers })
             .map((response: Response) => {
-                response.json(), 
-                this.successMessage = "Account updated with success!"
+                response.json(),
+                    this.successMessage = "Account updated with success!"
             })
+    }
+
+    addAccount(account: Account) {
+        const body = JSON.stringify(account);
+        const headers = new Headers({
+            'Content-Type': 'application/json'
+        })
+        return this.http.post(this.url, body, { headers: headers })
+            .map((response: Response) => {
+                response.json(),
+                    this.successMessage = "Account added with success!"
+            })
+            .catch(this.handleError);
     }
 
     private handleError(error: Response | any) {

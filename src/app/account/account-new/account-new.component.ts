@@ -9,6 +9,7 @@ import {
 import { Router } from "@angular/router";
 
 import { AccountService } from './../account.service';
+import { Account } from './../account.model';
 
 @Component({
     selector: 'app-account-new',
@@ -16,7 +17,7 @@ import { AccountService } from './../account.service';
 })
 
 export class AccountNewComponent implements OnInit {
-    
+
     form: FormGroup;
 
     constructor(
@@ -27,20 +28,53 @@ export class AccountNewComponent implements OnInit {
 
     ngOnInit() {
         this.createForm();
-     }
+        this.accountService.successMessage = null;
+    }
 
     onCancel() {
         this.resetForm();
     }
 
-    private resetForm(){
+    private resetForm() {
         this.form.reset();
     }
 
-     private createForm(){
+    private createForm() {
         this.form = this.fb.group({
             name: ['', Validators.required],
             isActive: ''
         })
     }
+
+    onSubmit() {
+        const newAccount = this.prepareSaveType();
+        this.accountService.addAccount(newAccount)
+            .subscribe(result => this.router.navigate(['account']));
+    }
+
+    private prepareSaveType(): Account {
+        const formModel = this.form.value;
+        const newAccount: Account = {
+            name: formModel.name,
+            isActive: formModel.isActive
+        }
+
+        return newAccount;
+    }
+    // onSubmit() {
+    //     const newTypeCategory = this.prepareSaveType();
+    //     this.categoryTypeService.addTypeCategory(newTypeCategory)
+    //         .subscribe(result => this.router.navigate(["category/type"])
+    //         );
+    // }
+
+    // private prepareSaveType(): TypeCategory {
+    //     const formModel = this.typeCategoryForm.value;
+    //     const newType: TypeCategory = {
+    //         name: formModel.name,
+    //         isIncome: formModel.isIncome
+    //     }
+
+    //     return newType;
+    // }
 }

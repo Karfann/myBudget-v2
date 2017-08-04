@@ -4,7 +4,8 @@
     <div class="form-group">
         <label class="control-label col-md-2" for="name">Name:</label>
         <div class="col-md-10">
-            <input type="text" class="form-control" id="name" placeholder="Name" [(ngModel)]="typeCategory.name" name="name" required #nameControl="ngModel">
+            <input type="text" class="form-control" id="name" placeholder="Name" [(ngModel)]="typeCategory.name" name="name" required
+                #nameControl="ngModel">
             <div class="alert alert-danger" [hidden]="nameControl.valid || nameControl.pristine">Name is required</div>
         </div>
     </div>

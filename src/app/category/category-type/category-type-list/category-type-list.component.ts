@@ -18,19 +18,19 @@ export class CategoryTypeListComponent implements OnInit {
     constructor(
         private categoryTypeService: CategoryTypeService,
         private router: Router
-        ) { }
+    ) { }
 
     ngOnInit() {
         this.getTypeCategories();
         this.successMessage = this.categoryTypeService.successMessage;
     }
 
-    getTypeCategories(): void{
+    getTypeCategories(): void {
         this.categoryTypeService
             .getTypeCategories()
             .subscribe(
-                list => this.typeCategories = list,
-                error => this.errorMessage = <any>error
+            list => this.typeCategories = list,
+            error => this.errorMessage = <any>error
             )
     }
 
