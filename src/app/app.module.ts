@@ -21,7 +21,7 @@ import { AccountNewComponent } from './account/account-new/account-new.component
 
 // SERVICES
 import { AccountService } from './account/account.service';
-import { CategoryTypeService } from './category/category-type.service';
+import { CategoryTypeService } from './category-type/category-type.service';
 import { CategoryService } from './category/category.service';
 
 // CATEGORY
@@ -30,10 +30,11 @@ import { CategoryMenuComponent } from './category/category-menu/category-menu.co
 import { CategoryListComponent } from './category/category-list/category-list.component';
 import { CategoryNewComponent } from  './category/category-new/category-new.component';
 import { CategoryShowComponent } from './category/category-show/category-show.component';
-import { CategoryTypeComponent } from './category/category-type/category-type.component';
-import { CategoryTypeListComponent } from './/category/category-type/category-type-list/category-type-list.component';
-import { CategoryTypeShowComponent } from './category/category-type/category-type-show/category-type-show.component';
-import { CategoryTypeNewComponent } from './category/category-type/category-type-new/category-type-new.component';
+import { CategoryTypeComponent } from './category-type/category-type.component';
+import { CategoryTypeListComponent } from './/category-type/category-type-list/category-type-list.component';
+import { CategoryTypeShowComponent } from './category-type/category-type-show/category-type-show.component';
+import { CategoryTypeNewComponent } from './category-type/category-type-new/category-type-new.component';
+import { ExpenseComponent } from './expense/expense.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { CategoryTypeNewComponent } from './category/category-type/category-type
     CategoryTypeComponent,
     CategoryTypeListComponent,
     CategoryTypeShowComponent,
-    CategoryTypeNewComponent
+    CategoryTypeNewComponent,
+    ExpenseComponent
   ],
   imports: [
     BrowserModule,

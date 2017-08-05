@@ -7,8 +7,8 @@ import {
 } from "@angular/forms";
 import { Router } from "@angular/router";
 
-import { CategoryTypeService } from '../../category-type.service';
-import { TypeCategory } from '../../type_category.model';
+import { TypeCategory } from '../type_category.model';
+import { CategoryTypeService } from '../category-type.service';
 
 @Component({
     selector: 'app-category-type-new',

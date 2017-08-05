@@ -1,4 +1,4 @@
-<div class="btn-group-vertical" role="group" aria-label="...">
-  <a class="btn btn-default btn-lg btn-block" [routerLink]="['/account']">List</a>
-  <a class="btn btn-default btn-lg btn-block" [routerLink]="['/account/new']">New</a>
-</div>
+<ul class="nav nav-tabs">
+  <li role="presentation"><a [routerLink]="['/account']">List</a></li>
+  <li role="presentation" routerLinkActive="active-link"><a [routerLink]="['/account/new']">New</a></li>
+</ul>

@@ -11,23 +11,24 @@ import { AccountListComponent } from './account/account-list/account-list.compon
 // CATEGORY 
 import { CategoryComponent } from './category/category.component';
 import { CategoryListComponent } from './category/category-list/category-list.component';
-import { CategoryNewComponent } from  './category/category-new/category-new.component';
+import { CategoryNewComponent } from './category/category-new/category-new.component';
 import { CategoryShowComponent } from './category/category-show/category-show.component';
 
-
 // CATEGORY TYPE
-import { CategoryTypeComponent } from './category/category-type/category-type.component';
-import { CategoryTypeListComponent } from './category/category-type/category-type-list/category-type-list.component';
-import { CategoryTypeNewComponent } from './category/category-type/category-type-new/category-type-new.component';
-import { CategoryTypeShowComponent } from './category/category-type/category-type-show/category-type-show.component';
+import { CategoryTypeComponent } from './category-type/category-type.component';
+import { CategoryTypeListComponent } from './category-type/category-type-list/category-type-list.component';
+import { CategoryTypeNewComponent } from './category-type/category-type-new/category-type-new.component';
+import { CategoryTypeShowComponent } from './category-type/category-type-show/category-type-show.component';
 
+// EXPENSE
+import { ExpenseComponent } from './expense/expense.component';
 
 const routes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: 'category' },
     {
         path: 'account', component: AccountComponent,
         children: [
-            { path: '', component: AccountListComponent },
+            // { path: '', component: AccountListComponent },
             { path: 'new', component: AccountNewComponent },
             { path: ':id', component: AccountShowComponent }
         ]
@@ -35,7 +36,9 @@ const routes: Routes = [
     {
         path: 'category', component: CategoryComponent,
         children: [
-            { path: '', component: CategoryListComponent },
+            // { path: '', component: CategoryListComponent },
+            { path: 'new', component: CategoryNewComponent },
+            { path: ':id', component: CategoryShowComponent },
             {
                 path: 'type', component: CategoryTypeComponent,
                 children: [
@@ -44,10 +47,9 @@ const routes: Routes = [
                     { path: ':id', component: CategoryTypeShowComponent }
                 ]
             },
-            { path: 'new', component: CategoryNewComponent },
-            { path: ':id', component: CategoryShowComponent }
         ]
-    }
+    },
+    { path: 'expense', component: ExpenseComponent }
 ];
 
 @NgModule({

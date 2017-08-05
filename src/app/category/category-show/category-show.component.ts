@@ -4,10 +4,11 @@ import { Response  } from "@angular/http";
 import { Location } from "@angular/common";
 
 import { Category } from '../category.model';
-import { TypeCategory } from '../type_category.model';
-
 import { CategoryService } from '../category.service';
-import { CategoryTypeService } from '../category-type.service';
+
+import { TypeCategory } from './../../category-type/type_category.model';
+import { CategoryTypeService } from './../../category-type/category-type.service';
+
 
 @Component({
     selector: 'app-category-show',

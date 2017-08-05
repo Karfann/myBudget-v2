@@ -41,16 +41,6 @@ export class AccountShowComponent implements OnInit {
         );
     }
 
-    // onDelete(): void {
-    //     if (this.account) {
-    //         if (confirm(`Are you sure to delete this account: ${this.account.name}`)) {
-    //             this.accountService
-    //                 .deleteAccount(this.account)
-    //                 .subscribe(res => this.router.navigate(["account"]));
-    //         }
-    //     }
-    // }
-
     onReturn(): void {
         this.location.back();
     }

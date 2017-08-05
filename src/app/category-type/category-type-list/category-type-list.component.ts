@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { CategoryTypeService } from '../../category-type.service';
-import { TypeCategory } from '../../type_category.model';
+import { CategoryTypeService } from './../category-type.service';
+import { TypeCategory } from './../type_category.model';
 
 @Component({
     selector: 'app-category-type-list',
@@ -35,7 +35,7 @@ export class CategoryTypeListComponent implements OnInit {
     }
 
     goTo(type: TypeCategory) {
-        let link = ['/category/type', type.id];
+        let link = ['category/type', type.id];
         this.router.navigate(link);
     }
 }

@@ -3,8 +3,8 @@ import { ActivatedRoute, Params, Router } from "@angular/router";
 import { Response  } from "@angular/http";
 import { Location } from "@angular/common";
 
-import { TypeCategory } from '../../type_category.model';
-import { CategoryTypeService } from '../../category-type.service';
+import { TypeCategory } from '../type_category.model';
+import { CategoryTypeService } from '../category-type.service';
 
 @Component({
     selector: 'app-category-type-show',
@@ -44,14 +44,14 @@ export class CategoryTypeShowComponent implements OnInit {
 
     onSubmit() {
         this.categoryTypeService.updateTypeCategory(this.typeCategory)
-            .subscribe(res => this.router.navigate(["category","type"]));
+            .subscribe(res => this.router.navigate(["category/type"]));
     }
 
      onDelete(): void {
         if (this.typeCategory) {
             if (confirm("Are you sure to delete this category type: " + this.typeCategory.name)) {
                 this.categoryTypeService.deleteTypeCategory(this.typeCategory)
-                    .subscribe(res => this.router.navigate(["category","type"]));
+                    .subscribe(res => this.router.navigate(["category/type"]));
             }
         }
 

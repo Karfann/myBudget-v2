@@ -43,8 +43,9 @@ export class AccountService {
         return this.http.patch(this.url + "/" + account.id, body, { headers: headers })
             .map((response: Response) => {
                 response.json(),
-                    this.successMessage = "Account updated with success!"
+                    this.successMessage = "Account added with success!"
             })
+            .catch(this.handleError);
     }
 
     addAccount(account: Account) {
