@@ -21,7 +21,7 @@ import { CategoryTypeService } from './../../category-type/category-type.service
 
 export class CategoryNewComponent implements OnInit {
 
-    categoryForm: FormGroup;
+    form: FormGroup;
     typeCategories: TypeCategory[];
 
     constructor(
@@ -34,10 +34,12 @@ export class CategoryNewComponent implements OnInit {
     ngOnInit() {
         this.getTypeCategories();
         this.createForm();
+        this.categoryService.successMessage = null;
+        this.categoryTypeService.successMessage = null;
     }
 
     private createForm() {
-        this.categoryForm = this.fb.group({
+        this.form = this.fb.group({
             name: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
             type_category_id: ['', Validators.required]
         })
@@ -57,7 +59,7 @@ export class CategoryNewComponent implements OnInit {
     }
 
     private prepareSaveCategory(): Category {
-        const formModel = this.categoryForm.value;
+        const formModel = this.form.value;
         const newCategory: Category = {
             name: formModel.name,
             type_category_id: formModel.type_category_id,
@@ -68,7 +70,7 @@ export class CategoryNewComponent implements OnInit {
     }
 
     resetForm(): void {
-        this.categoryForm.reset();
+        this.form.reset();
     }
 
     private getTypeCategories(): void {

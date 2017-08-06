@@ -18,9 +18,12 @@
             </div>
         </div>
     </div>
-    <div class="btn-group" role="group" aria-label="...">
-        <button type="button" class="btn btn-warning btn-lg" (click)="onReturn()">Back</button>
-        <button type="submit" class="btn btn-success btn-lg" [disabled]="!accountForm.form.valid">Save</button>
-        <!--<button type="button" class="btn btn-danger btn-lg" (click)="onDelete()">Delete</button>-->
+    <div class="form-group">
+        <div class="col-md-4 col-md-offset-8">
+            <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btn btn-default btn-sm" (click)="onReturn()">Back</button>
+                <button type="submit" class="btn btn-success btn-sm" [disabled]="!accountForm.form.valid">Save</button>
+            </div>
+        </div>
     </div>
 </form>

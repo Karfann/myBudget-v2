@@ -1,24 +1,28 @@
 <h3 class="text-center">Add Category</h3>
 
-<form [formGroup]="categoryForm" (ngSubmit)="onSubmit()" class="form-horizontal" novalidate>
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-horizontal" novalidate>
 
   <div class="form-group">
-    <label class="control-label col-sm-2" for="name">Name:</label>
-    <div class="col-sm-10">
+    <label class="control-label col-md-2" for="name">Name:</label>
+    <div class="col-md-10">
       <input type="text" class="form-control" formControlName="name" placeholder="Name">
-      <div class="alert alert-danger" [hidden]="categoryForm.controls.name.valid || categoryForm.controls.name.pristine">Name is required</div>
+      <div class="alert alert-danger" [hidden]="form.controls.name.valid || form.controls.name.pristine">Name is required</div>
     </div>
   </div>
   <div class="form-group">
-    <label class="control-label col-sm-2" for="name">Type:</label>
-    <div class="col-sm-8">
+    <label class="control-label col-md-2" for="name">Type:</label>
+    <div class="col-md-10">
       <select class="form-control" formControlName="type_category_id">
         <option *ngFor="let type of typeCategories" [value]="type.id">{{ type.name }}</option>
       </select>
     </div>
   </div>
   <div class="form-group">
-    <button type="submit" class="btn btn-success" [disabled]="!categoryForm.valid">Add</button>
-    <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+    <div class="col-md-3 col-md-offset-9">
+      <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default btn-sm" (click)="onCancel()">Cancel</button>
+        <button type="submit" class="btn btn-success btn-sm" [disabled]="!form.valid">Save</button>
+      </div>
+    </div>
   </div>
 </form>

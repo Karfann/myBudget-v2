@@ -25,6 +25,7 @@ export class CategoryTypeShowComponent implements OnInit {
     ngOnInit() { 
         this.typeCategory = new TypeCategory('', false);
         this.getTypeCategory();
+        this.categoryTypeService.successMessage = null;
     }
 
     getTypeCategory(){

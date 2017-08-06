@@ -27,6 +27,7 @@ export class CategoryTypeNewComponent implements OnInit {
 
     ngOnInit() {
         this.createForm();
+        this.categoryTypeService.successMessage = null;
     }
 
     createForm() {

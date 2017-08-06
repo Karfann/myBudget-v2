@@ -34,7 +34,13 @@ import { CategoryTypeComponent } from './category-type/category-type.component';
 import { CategoryTypeListComponent } from './/category-type/category-type-list/category-type-list.component';
 import { CategoryTypeShowComponent } from './category-type/category-type-show/category-type-show.component';
 import { CategoryTypeNewComponent } from './category-type/category-type-new/category-type-new.component';
+
+// EXPENSE
 import { ExpenseComponent } from './expense/expense.component';
+import { ExpenseMenuComponent } from './expense/expense-menu/expense-menu.component';
+import { ExpenseListComponent } from './expense/expense-list/expense-list.component';
+import { ExpenseNewComponent } from './expense/expense-new/expense-new.component';
+import { ExpenseShowComponent } from './expense/expense-show/expense-show.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +62,11 @@ import { ExpenseComponent } from './expense/expense.component';
     CategoryTypeListComponent,
     CategoryTypeShowComponent,
     CategoryTypeNewComponent,
-    ExpenseComponent
+    ExpenseComponent,
+    ExpenseMenuComponent,
+    ExpenseListComponent,
+    ExpenseNewComponent,
+    ExpenseShowComponent
   ],
   imports: [
     BrowserModule,

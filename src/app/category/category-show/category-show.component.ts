@@ -32,6 +32,8 @@ export class CategoryShowComponent implements OnInit {
         this.category = new Category('',1, true);
         this.getTypeCategories();
         this.getCategory();
+        this.categoryService.successMessage = null;
+        this.categoryTypeService.successMessage = null;
     }
 
     getCategory(): void {
