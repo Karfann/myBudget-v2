@@ -20,6 +20,13 @@ export class AccountService {
             .catch(this.handleError)
     }
 
+    getAccountsActive(): Observable<Account[]> {
+        return this.http.get(this.url)
+            .map((response: Response) => <Account[]>response.json().filter(accout => accout.isActive))
+            .catch(this.handleError);
+
+    }
+
     getAccount(id: number) {
         return this.http.get(this.url + '/' + id + '.json');
 

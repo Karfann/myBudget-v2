@@ -11,3 +11,6 @@
     </span>
   </button>
 </div>
+
+<app-error *ngIf="errorMessage" [error]="errorMessage"></app-error>
+<app-success *ngIf="successMessage" [message]="successMessage"></app-success>

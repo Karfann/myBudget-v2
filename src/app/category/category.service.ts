@@ -21,6 +21,13 @@ export class CategoryService {
 
     }
 
+    getCategoriesActive(): Observable<Category[]> {
+        return this.http.get(this.url)
+            .map((response: Response) => <Category[]>response.json().filter(category => category.isActive))
+            .catch(this.handleError);
+
+    }
+
     getCategory(id: number) {
         return this.http.get(this.url + "/" + id + '.json');
     }
